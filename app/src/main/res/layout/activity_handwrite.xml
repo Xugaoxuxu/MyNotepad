@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--两个View,一个是TouchView,用于在上面画图，
+另一个是EditText,用于将手写的字显示在其中，
+要将两个自定义View通过FrameLayout帧式布局重叠在起，以实现全屏手写的功能。-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff">
+    <!--手写板-->
+    <FrameLayout
+        android:id="@+id/finger_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.mynotepade.MyEditText
+            android:id="@+id/et_handwrite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:fadingEdge="vertical"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:textSize="20sp"
+            android:layout_margin="5dp"
+            android:focusable="true"
+            android:lineSpacingExtra="10dp"
+            android:textColor="#00000000"
+            android:background="@android:color/white"
+            />
+
+        <com.example.mynotepade.TouchView
+            android:id="@+id/touch_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+        </com.example.mynotepade.TouchView>
+    </FrameLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/paintBottomMenu"
+        android:src="@drawable/line"
+        />
+
+    <!--底部导航-->
+    <GridView
+        android:id="@+id/paintBottomMenu"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:numColumns="auto_fit"
+        android:background="@drawable/navigationbar_bg"
+        android:horizontalSpacing="10dp"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>

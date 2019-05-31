@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--这个布局是自定义的标题布局用于覆盖系统的标题栏-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@drawable/navigationbar_bg">
+
+    <!--logo-->
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="5dp"
+        android:src="@drawable/icon"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/iv_icon"
+        android:gravity="center_vertical"
+        android:text="MyNote"
+        android:textSize="20dp"
+        />
+
+    <!--添加按钮-->
+    <Button
+        android:id="@+id/bt_add"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_margin="5dp"
+        android:layout_toLeftOf="@+id/bt_setting"
+        android:background="@drawable/navigationbar_add"
+        />
+
+    <!--设置按钮-->
+    <Button
+        android:id="@+id/bt_setting"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/navigationbar_setting"
+        />
+</RelativeLayout>

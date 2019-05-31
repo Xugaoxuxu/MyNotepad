@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mynotepade.PaintActivity">
+<!--自己实现的paintview-->
+<com.example.mynotepade.paintView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/paint_layout"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line"
+        android:layout_above="@+id/paintBottomMenu"
+        />
+    <!--这是底部导航栏容器的布局，画板的布局在代码中实现-->
+    <GridView
+        android:id="@+id/paintBottomMenu"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:numColumns="auto_fit"
+        android:background="@drawable/navigationbar_bg"
+        android:horizontalSpacing="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
